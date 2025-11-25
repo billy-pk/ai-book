@@ -14,7 +14,9 @@ This feature will create an AI-written book titled "Impact of AI on School Educa
 **Language/Version**: Node.js 22.20.0, Python 3.12
 **Primary Dependencies**: Docusaurus 3.2, uv
 **Storage**: Markdown files
-**Testing**: NEEDS CLARIFICATION (e.g., Jest, Vitest for Docusaurus components; Pytest for generation scripts)
+**Testing**:
+*   **Python Scripts (Content Generation)**: Pytest for unit and integration tests.
+*   **Docusaurus Frontend**: Jest and React Testing Library for unit and component tests. Cypress for end-to-end (E2E) tests.
 **Target Platform**: GitHub Pages
 **Project Type**: Web application
 **Performance Goals**: Fast static site generation and page loads
