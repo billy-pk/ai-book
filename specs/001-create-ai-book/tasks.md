@@ -113,7 +113,7 @@ description: "Task list for feature implementation"
 
 **Purpose**: Automate the deployment of the Docusaurus frontend to GitHub Pages.
 
-- [ ] T034 Create the GitHub Actions workflow file (`.github/workflows/deploy.yml`) to build and deploy the Docusaurus frontend from the `frontend/build` directory to GitHub Pages upon merge to `main`.
+- [x] T034 Create the GitHub Actions workflow file (`.github/workflows/deploy.yml`) to build and deploy the Docusaurus frontend from the `frontend/build` directory to GitHub Pages upon merge to `main`.
 - [ ] T035 Commit and push the changes to `main` to trigger the first deployment and verify successful publishing to GitHub Pages.
 
 ---

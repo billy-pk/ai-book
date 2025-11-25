@@ -1,0 +1,39 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20 # Use a Docusaurus-compatible Node.js version
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./frontend
+
+      - name: Build Docusaurus website
+        run: npm run build
+        working-directory: ./frontend
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/build # Directory containing the static site
+          # The branch to deploy to GitHub Pages. Usually 'gh-pages' for user/org pages
+          # or 'main' for project pages (if configured in repo settings).
+          # Assuming the project uses 'gh-pages' branch for deployment.
+          publish_branch: gh-pages
