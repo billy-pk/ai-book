@@ -27,11 +27,11 @@ description: "Task list for feature implementation"
 
 **Purpose**: Project initialization and basic structure.
 
-- [ ] T001 Create root project directories in `/`: `frontend/`, `backend/`
-- [ ] T002 [P] Create content generator script directories in `frontend/`: `scripts/content-generator/` and `scripts/content-generator/tests/`
-- [ ] T003 [P] Scaffold Docusaurus project in `frontend/` using `npx create-docusaurus@latest . classic --typescript`
-- [ ] T004 [P] Create `frontend/scripts/content-generator/requirements.txt` with dependencies: `python-dotenv`, `google-generativeai` (or other AI SDK)
-- [ ] T005 [P] Install Python dependencies using `uv pip install -r frontend/scripts/content-generator/requirements.txt`
+- [x] T001 Create root project directories in `/`: `frontend/`, `backend/`
+- [x] T002 [P] Create content generator script directories in `frontend/`: `scripts/content-generator/` and `scripts/content-generator/tests/`
+- [x] T003 [P] Scaffold Docusaurus project in `frontend/` using `npx create-docusaurus@latest . classic --typescript`
+- [x] T004 [P] Create `frontend/scripts/content-generator/requirements.txt` with dependencies: `python-dotenv`, `google-generativeai` (or other AI SDK)
+- [x] T005 [P] Install Python dependencies using `uv pip install -r frontend/scripts/content-generator/requirements.txt`
 - [ ] T006 [P] Create a sample `.env.example` file in `frontend/` with `MODEL_API_KEY=""`
 - [ ] T007 Configure `pytest` for the Python scripts.
 - [ ] T008 Configure `Jest` for the Docusaurus frontend.
