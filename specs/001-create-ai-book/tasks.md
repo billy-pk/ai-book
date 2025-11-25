@@ -44,14 +44,14 @@ description: "Task list for feature implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T009 Define chapter and book structure in a configuration file or within the main script `frontend/scripts/content-generator/main.py`
-- [ ] T010 Implement environment variable loading for `MODEL_API_KEY` in `frontend/scripts/content-generator/main.py`
-- [ ] T011 [P] Implement core AI model communication logic to generate content for a given prompt in `frontend/scripts/content-generator/main.py`
-- [ ] T012 [P] Implement file-saving logic to write generated content to a Markdown file with Docusaurus frontmatter (`id`, `title`) in `frontend/docs/`
-- [ ] T013 Implement main loop in `frontend/scripts/content-generator/main.py` to iterate through chapters, generate content, and save files, following the `NN-slug.md` naming convention.
-- [ ] T014 Implement logging (to console and file) for progress and errors in `frontend/scripts/content-generator/main.py`
-- [ ] T015 Implement resumption logic to check for existing chapter files and skip generation if they exist in `frontend/scripts/content-generator/main.py`
-- [ ] T016 Write unit tests for the content generator script's helper functions in `frontend/scripts/content-generator/tests/`
+- [x] T009 Define chapter and book structure in a configuration file or within the main script `frontend/scripts/content-generator/main.py`
+- [x] T010 Implement environment variable loading for `MODEL_API_KEY` in `frontend/scripts/content-generator/main.py`
+- [x] T011 [P] Implement core AI model communication logic to generate content for a given prompt in `frontend/scripts/content-generator/main.py`
+- [x] T012 [P] Implement file-saving logic to write generated content to a Markdown file with Docusaurus frontmatter (`id`, `title`) in `frontend/docs/`
+- [x] T013 Implement main loop in `frontend/scripts/content-generator/main.py` to iterate through chapters, generate content, and save files, following the `NN-slug.md` naming convention.
+- [x] T014 Implement logging (to console and file) for progress and errors in `frontend/scripts/content-generator/main.py`
+- [x] T015 Implement resumption logic to check for existing chapter files and skip generation if they exist in `frontend/scripts/content-generator/main.py`
+- [x] T016 Write unit tests for the content generator script's helper functions in `frontend/scripts/content-generator/tests/`
 
 **Checkpoint**: Foundation ready - content generation can now be executed.
 
