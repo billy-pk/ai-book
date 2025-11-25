@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Node.js 22.20.0, Python 3.12 + Docusaurus 3.2, uv (001-create-ai-book)
+- Markdown files (001-create-ai-book)
+
+## Recent Changes
+- 001-create-ai-book: Added Node.js 22.20.0, Python 3.12 + Docusaurus 3.2, uv
