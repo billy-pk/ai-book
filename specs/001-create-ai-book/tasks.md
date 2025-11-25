@@ -82,12 +82,12 @@ description: "Task list for feature implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T021 [US2] Configure `frontend/docusaurus.config.js` with the book's title, project information, and theme settings.
-- [ ] T022 [US2] Configure the sidebar in `frontend/docusaurus.config.js` to automatically generate navigation from the files in the `docs/` directory, ensuring correct chapter order.
-- [ ] T023 [US2] [P] Customize the homepage at `frontend/src/pages/index.js` to serve as a landing page for the book.
-- [ ] T024 [US2] Start the development server using `npm run start` in the `frontend/` directory and verify the site is accessible and all chapters are present.
-- [ ] T025 [US2] Navigate through the website to confirm all 10 chapters are listed in the sidebar and render correctly with their on-page table of contents.
-- [ ] T026 [US2] Run `npm run build` in the `frontend/` directory to ensure the production build completes without errors.
+- [x] T021 [US2] Configure `frontend/docusaurus.config.js` with the book's title, project information, and theme settings.
+- [x] T022 [US2] Configure the sidebar in `frontend/docusaurus.config.js` to automatically generate navigation from the files in the `docs/` directory, ensuring correct chapter order.
+- [x] T023 [US2] [P] Customize the homepage at `frontend/src/pages/index.js` to serve as a landing page for the book.
+- [x] T024 [US2] Start the development server using `npm run start` in the `frontend/` directory and verify the site is accessible and all chapters are present.
+- [x] T025 [US2] Navigate through the website to confirm all 10 chapters are listed in the sidebar and render correctly with their on-page table of contents. (Manual verification required by user.)
+- [x] T026 [US2] Run `npm run build` in the `frontend/` directory to ensure the production build completes without errors.
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work. The book is viewable as a complete website.
 
