@@ -65,10 +65,10 @@ description: "Task list for feature implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T017 [US1] Execute the content generation script by running `python frontend/scripts/content-generator/main.py`
-- [ ] T018 [US1] Verify that 10 Markdown files are created in `frontend/docs/` with the correct `NN-slugified-chapter-title.md` naming format.
-- [ ] T019 [US1] Manually review a sample of the generated files to ensure content is relevant, meets word count approximations, and has correct frontmatter.
-- [ ] T020 [US1] Review logs to ensure no errors were reported during generation.
+- [x] T017 [US1] Execute the content generation script by running `python frontend/scripts/content-generator/main.py`
+- [x] T018 [US1] Verify that 10 Markdown files are created in `frontend/docs/` with the correct `NN-slugified-chapter-title.md` naming format.
+- [x] T019 [US1] Manually review a sample of the generated files to ensure content is relevant, meets word count approximations, and has correct frontmatter.
+- [x] T020 [US1] Review logs to ensure no errors were reported during generation.
 
 **Checkpoint**: At this point, User Story 1 should be fully functional. The core book content exists as Markdown files.
 

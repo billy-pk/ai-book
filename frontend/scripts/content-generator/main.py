@@ -24,7 +24,7 @@ if not MODEL_API_KEY:
     raise ValueError("MODEL_API_KEY not found in environment variables. Please set it in a .env file.")
 
 genai.configure(api_key=MODEL_API_KEY)
-model = genai.GenerativeModel('gemini-pro') # Using gemini-pro as a default model
+model = genai.GenerativeModel('gemini-2.5-flash-lite') # Using gemini-2.5-flash-lite as a default model
 
 def generate_content(prompt: str) -> str:
     """Generates content using the configured AI model."""
