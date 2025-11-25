@@ -1,6 +1,6 @@
-# Implementation Plan: [FEATURE]
+# Implementation Plan: Create AI-Written Book
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
+**Branch**: `001-create-ai-book` | **Date**: 2025-11-25 | **Spec**: specs/001-create-ai-book/spec.md
 **Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
 
 **Note**: This template is filled in by the `/sp.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
@@ -31,6 +31,10 @@ This feature will create an AI-written book titled "Impact of AI on School Educa
 *   [x] **II. Testing Standards**: Are there tasks for comprehensive testing (unit, integration, E2E)? (The spec defines detailed acceptance criteria and user stories).
 *   [x] **III. User Experience Consistency**: Does the plan consider UI/UX consistency? (Docusaurus provides a consistent and professional UX out-of-the-box).
 *   [x] **IV. Performance Requirements**: Does the plan address performance targets? (Static site generation with Docusaurus inherently produces a high-performance website).
+
+## Deployment Strategy
+
+The Docusaurus frontend will be deployed to GitHub Pages. This will be achieved using a GitHub Actions workflow. The workflow will be triggered upon a merge to the `main` branch and will target the `frontend/build` directory, which contains the statically generated Docusaurus site. This ensures automated and continuous deployment of the documentation website.
 
 ## Project Structure
 
