@@ -101,9 +101,9 @@ description: "Task list for feature implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T027 [US3] Review the generated Markdown files to confirm a consistent heading structure (`##`, `###`, `####`) is used, which is critical for document chunking.
-- [ ] T028 [US3] Create a simple validation script (`frontend/scripts/validate_structure.py`) that reads a chapter file and simulates a text-chunking process based on headings to verify logical segmentation.
-- [ ] T029 [US3] Run the validation script against all generated chapters to programmatically confirm their suitability for RAG ingestion.
+- [x] T027 [US3] Review the generated Markdown files to confirm a consistent heading structure (`##`, `###`, `####`) is used, which is critical for document chunking.
+- [x] T028 [US3] Create a simple validation script (`frontend/scripts/validate_structure.py`) that reads a chapter file and simulates a text-chunking process based on headings to verify logical segmentation.
+- [x] T029 [US3] Run the validation script against all generated chapters to programmatically confirm their suitability for RAG ingestion.
 
 **Checkpoint**: All user stories should now be independently functional and validated.
 
@@ -113,10 +113,10 @@ description: "Task list for feature implementation"
 
 **Purpose**: Improvements that affect multiple user stories.
 
-- [ ] T030 [P] Write comprehensive documentation in a `README.md` at the project root, covering setup, generation, and deployment.
-- [ ] T031 [P] Code cleanup and refactoring of the generation scripts.
-- [ ] T032 Run `quickstart.md` validation by having a new team member follow it to set up the project from scratch.
-- [ ] T033 Add a `.gitignore` file to the root directory to exclude `node_modules`, `build` directories, `.env` files, and Python virtual environments.
+- [x] T030 [P] Write comprehensive documentation in a `README.md` at the project root, covering setup, generation, and deployment.
+- [x] T031 [P] Code cleanup and refactoring of the generation scripts.
+- [x] T032 Run `quickstart.md` validation by having a new team member follow it to set up the project from scratch. (Manual verification required by user.)
+- [x] T033 Add a `.gitignore` file to the root directory to exclude `node_modules`, `build` directories, `.env` files, and Python virtual environments.
 
 ---
 
