@@ -32,9 +32,9 @@ description: "Task list for feature implementation"
 - [x] T003 [P] Scaffold Docusaurus project in `frontend/` using `npx create-docusaurus@latest . classic --typescript`
 - [x] T004 [P] Create `frontend/scripts/content-generator/requirements.txt` with dependencies: `python-dotenv`, `google-generativeai` (or other AI SDK)
 - [x] T005 [P] Install Python dependencies using `uv pip install -r frontend/scripts/content-generator/requirements.txt`
-- [ ] T006 [P] Create a sample `.env.example` file in `frontend/` with `MODEL_API_KEY=""`
-- [ ] T007 Configure `pytest` for the Python scripts.
-- [ ] T008 Configure `Jest` for the Docusaurus frontend.
+- [x] T006 [P] Create a sample `.env.example` file in `frontend/` with `MODEL_API_KEY=""`
+- [x] T007 Configure `pytest` for the Python scripts.
+- [x] T008 Configure `Jest` for the Docusaurus frontend.
 
 ---
 
