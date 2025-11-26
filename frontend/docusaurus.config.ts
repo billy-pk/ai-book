@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'The Impact of AI on School Education',
-  tagline: 'Exploring the transformative power of Artificial Intelligence in K-12 and Higher Education',
+  title: 'The Transformation of Education: A Guide to Virtual Reality and the Metaverse in K-12',
+  tagline: 'Exploring VR and the Metaverse for K-12 Education',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -56,7 +56,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'AI Book',
+      title: 'VR/Metaverse in Education',
       logo: {
         alt: 'AI Book Logo',
         src: 'img/logo.svg',
