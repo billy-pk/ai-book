@@ -116,3 +116,4 @@ To run the validation script against all generated chapters (ensure you are in t
 find frontend/docs -name "[0-9][0-9]-*.md" -print0 | xargs -0 -I {} frontend/scripts/content-generator/.venv/bin/python frontend/scripts/validate_structure.py "{}"
 ```
 This will output the chunked content for each chapter, allowing verification of logical segmentation.
+.
