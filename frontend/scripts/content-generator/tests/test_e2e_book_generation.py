@@ -23,13 +23,12 @@ def mock_env_vars():
     with patch.dict(os.environ, {"MODEL_API_KEY": "fake_api_key"}):
         yield
 
-# Mock the entire LLMInterface class for e2e tests
+# Mock the LLMInterface's generate_content to return predefined content
 @pytest.fixture
-def mock_llm_interface_class():
-    with patch('book_generator.llm_interface.LLMInterface', autospec=True) as MockLLMInterface:
-        mock_instance = MockLLMInterface.return_value
-        mock_instance.generate_content.return_value = "## Generated Chapter Content\n\nThis is a test chapter."
-        yield MockLLMInterface
+def mock_llm_generate_content(reset_llm_interface_singleton_e2e): # Ensure singleton is reset before patching
+    with patch("book_generator.llm_interface.LLMInterface.generate_content") as mock_generate:
+        mock_generate.return_value = "## Generated Chapter Content\n\nThis is a test chapter."
+        yield mock_generate
 
 # Temporary directory for Docusaurus build output
 @pytest.fixture
@@ -37,7 +36,7 @@ def docusaurus_build_dir(tmp_path):
     return tmp_path / "build"
 
 def test_e2e_book_generation_and_docusaurus_build(
-    mock_llm_interface_class, tmp_path, docusaurus_build_dir
+    mock_llm_generate_content, tmp_path, docusaurus_build_dir
 ):
     """
     Tests the end-to-end process: content generation and a simulated Docusaurus build.
