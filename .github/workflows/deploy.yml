@@ -50,7 +50,7 @@ jobs:
         # No working-directory needed if path is relative from root
 
       - name: Run Python tests with coverage
-        run: pytest
+        run: python -m pytest
         working-directory: ./frontend/scripts/content-generator
 
       - name: Generate AI Book Content
