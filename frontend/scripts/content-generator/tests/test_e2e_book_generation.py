@@ -23,11 +23,14 @@ def mock_env_vars():
     with patch.dict(os.environ, {"MODEL_API_KEY": "fake_api_key"}):
         yield
 
+# Create a long dummy string (e.g., repeating a word 1500 times)
+LONG_MOCK_CONTENT = "## Generated Chapter Content\n\n" + ("word " * 1500) + "\n\n### Sub-section\n\nMore words."
+
 # Mock the LLMInterface's generate_content to return predefined content
 @pytest.fixture
 def mock_llm_generate_content(reset_llm_interface_singleton_e2e): # Ensure singleton is reset before patching
     with patch("book_generator.llm_interface.LLMInterface.generate_content") as mock_generate:
-        mock_generate.return_value = "## Generated Chapter Content\n\nThis is a test chapter."
+        mock_generate.return_value = LONG_MOCK_CONTENT
         yield mock_generate
 
 # Temporary directory for Docusaurus build output
