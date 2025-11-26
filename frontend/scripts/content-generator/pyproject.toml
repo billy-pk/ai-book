@@ -1,0 +1,21 @@
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | frontend/scripts/content-generator/.venv
+)/
+'''
+
+[tool.pytest.ini_options]
+addopts = "--cov=book_generator --cov-report=term-missing --cov-fail-under=80"

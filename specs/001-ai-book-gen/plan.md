@@ -11,7 +11,7 @@ The core task is to generate a comprehensive 10-chapter AI-written book as speci
 
 **Language/Version**: Python 3.9+ (Leveraging the existing Python environment from `frontend/scripts/content-generator/` and its established LLM SDK compatibility.)  
 **Primary Dependencies**:
-*   LLM API client (e.g., Google Generative AI SDK, to be confirmed by T001's findings regarding existing content generation tooling).
+*   LLM API client (Google Generative AI SDK).
 *   Standard Python libraries for file I/O, string manipulation.
 *   No dedicated Markdown generation/parsing library is planned initially; direct string manipulation is expected to be sufficient for Docusaurus-compatible Markdown.
 **Storage**: Local filesystem for intermediate and final generated Markdown files (target: `frontend/docs/`).

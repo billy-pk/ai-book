@@ -31,9 +31,29 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Install dependencies
+      - name: Install Node.js dependencies
         run: npm install
         working-directory: ./frontend
+
+      # Add Python setup and content generation steps
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9' # Use a specific Python version that meets requirements (e.g., 3.9+)
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt pytest pytest-cov
+        working-directory: ./frontend/scripts/content-generator
+
+      - name: Run Python tests with coverage
+        run: pytest
+        working-directory: ./frontend/scripts/content-generator
+
+      - name: Generate AI Book Content
+        run: python main.py
+        working-directory: ./frontend/scripts/content-generator
+        env:
+          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }} # Pass the LLM API key securely
 
       - name: Build Docusaurus website
         run: npm run build
