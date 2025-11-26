@@ -83,7 +83,7 @@ const config: Config = {
           items: [
             {
               label: 'Book',
-              to: '/docs/preface-why-ai-matters-in-todays-classrooms', // Fixed broken link
+              to: '/docs/preface-the-new-digital-classroom-frontier',
             },
           ],
         },

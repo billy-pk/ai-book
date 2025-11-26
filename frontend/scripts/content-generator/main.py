@@ -26,63 +26,63 @@ DOCS_DIR = os.path.join(os.path.dirname(__file__), '../../docs') # Relative path
 BOOK_STRUCTURE: List[Dict[str, Any]] = [
     {
         "position": 1,
-        "title": "Preface — Why AI Matters in Today’s Classrooms",
-        "approx_word_count": 1000,
-        "slug": "preface-why-ai-matters-in-todays-classrooms"
+        "title": "Preface: The New Digital Classroom Frontier",
+        "approx_word_count": 1200,
+        "slug": "preface-the-new-digital-classroom-frontier"
     },
     {
         "position": 2,
-        "title": "Chapter 1 — The Dawn of AI in Education: A Historical Perspective",
+        "title": "Understanding the Metaverse and VR/AR Fundamentals for Learning",
         "approx_word_count": 1500,
-        "slug": "the-dawn-of-ai-in-education"
+        "slug": "understanding-the-metaverse-and-vrar-fundamentals-for-learning"
     },
     {
         "position": 3,
-        "title": "Chapter 2 — AI-Powered Learning: Personalization and Adaptive Pathways",
+        "title": "Hardware and Software Tools for Immersive Education",
         "approx_word_count": 1500,
-        "slug": "ai-powered-learning"
+        "slug": "hardware-and-software-tools-for-immersive-education"
     },
     {
         "position": 4,
-        "title": "Chapter 3 — The Educator's New Partner: AI Tools for Teaching and Administration",
+        "title": "Integrating VR/AR into Core Curriculum Subjects",
         "approx_word_count": 1500,
-        "slug": "the-educators-new-partner"
+        "slug": "integrating-vrar-into-core-curriculum-subjects"
     },
     {
         "position": 5,
-        "title": "Chapter 4 — Ethical AI in Schools: Navigating Bias, Privacy, and Accountability",
+        "title": "Immersive Assessment and Experiential Learning",
         "approx_word_count": 1500,
-        "slug": "ethical-ai-in-schools"
+        "slug": "immersive-assessment-and-experiential-learning"
     },
     {
         "position": 6,
-        "title": "Chapter 5 — Rethinking Assessment: How AI is Changing Evaluation Methods",
+        "title": "Designing and Building Virtual Learning Environments",
         "approx_word_count": 1500,
-        "slug": "rethinking-assessment"
+        "slug": "designing-and-building-virtual-learning-environments"
     },
     {
         "position": 7,
-        "title": "Chapter 6 — Future-Proofing Education: Skills for an AI-Driven World",
+        "title": "Ethical Considerations and Student Safety in Virtual Worlds",
         "approx_word_count": 1500,
-        "slug": "future-proofing-education"
+        "slug": "ethical-considerations-and-student-safety-in-virtual-worlds"
     },
     {
         "position": 8,
-        "title": "Chapter 7 — Global Perspectives: AI in Education Across Cultures",
+        "title": "The Fully Virtual School: Future Trends and Predictions",
         "approx_word_count": 1500,
-        "slug": "global-perspectives"
+        "slug": "the-fully-virtual-school-future-trends-and-predictions"
     },
     {
         "position": 9,
-        "title": "Chapter 8 — The Human Element: Preserving Creativity and Critical Thinking",
+        "title": "VR/AR for Special Education and Diverse Learners",
         "approx_word_count": 1500,
-        "slug": "the-human-element"
+        "slug": "vrar-for-special-education-and-diverse-learners"
     },
     {
         "position": 10,
-        "title": "Conclusion — Charting the Course: The Future of AI in School Education",
-        "approx_word_count": 1000,
-        "slug": "conclusion-charting-the-course"
+        "title": "Policy, Governance, and the Future of Educational Technology",
+        "approx_word_count": 1200,
+        "slug": "policy-governance-and-the-future-of-educational-technology"
     },
 ]
 
