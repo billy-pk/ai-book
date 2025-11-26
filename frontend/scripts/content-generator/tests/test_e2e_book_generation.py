@@ -49,7 +49,7 @@ def test_e2e_book_generation_and_docusaurus_build(
     temp_docs_dir = tmp_path / "docs" # Defined here
 
     # Patch validate_word_count to always return True
-    with patch('book_generator.utils.validate_word_count', return_value=True):
+    with patch('main.validate_word_count', return_value=True):
         with patch("main.DOCS_DIR", str(temp_docs_dir)):
             # Ensure temporary docs directory exists
             temp_docs_dir.mkdir(parents=True, exist_ok=True)
