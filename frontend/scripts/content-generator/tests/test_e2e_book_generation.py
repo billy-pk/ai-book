@@ -83,8 +83,8 @@ def test_e2e_book_generation_and_docusaurus_build(
             with patch("subprocess.run") as mock_subprocess_run:
                 mock_process = MagicMock()
                 mock_process.returncode = 0
-                mock_process.stdout = b"BUILD_SUCCESS"
-                mock_process.stderr = b""
+                mock_process.stdout = "BUILD_SUCCESS"
+                mock_process.stderr = ""
                 mock_subprocess_run.return_value = mock_process
 
                 try:
