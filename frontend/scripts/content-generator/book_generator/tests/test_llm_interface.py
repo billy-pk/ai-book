@@ -8,6 +8,13 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../.
 
 from book_generator.llm_interface import LLMInterface
 
+# Fixture to reset the singleton instance before each test
+@pytest.fixture(autouse=True)
+def reset_llm_interface_singleton():
+    LLMInterface._instance = None # Reset the singleton instance
+    yield
+    LLMInterface._instance = None # Ensure it's reset after the test too
+
 @pytest.fixture(autouse=True)
 def mock_env_vars():
     """Mocks environment variables for consistent testing."""
@@ -34,6 +41,7 @@ def test_llm_interface_singleton_pattern():
 
 def test_llm_interface_initialization(mock_genai_configure, mock_generative_model):
     """Tests successful initialization of LLMInterface."""
+    # The _initialize method is called within __new__
     llm_interface = LLMInterface("test-model")
     mock_genai_configure.assert_called_once_with(api_key="fake_api_key")
     mock_generative_model.assert_called_once_with("test-model")
@@ -42,8 +50,11 @@ def test_llm_interface_initialization(mock_genai_configure, mock_generative_mode
 def test_llm_interface_initialization_no_api_key():
     """Tests initialization failure when MODEL_API_KEY is missing."""
     with patch.dict(os.environ, {}, clear=True): # Clear environment variables for this test
-        with pytest.raises(ValueError, match="MODEL_API_KEY not found"):
-            LLMInterface()
+        # Here, we need to ensure load_dotenv is also mocked or the environment is truly empty
+        # A simpler way for testing singletons with env vars is to mock os.getenv directly.
+        with patch('os.getenv', return_value=None):
+            with pytest.raises(ValueError, match="MODEL_API_KEY not found"):
+                LLMInterface()
 
 def test_generate_content_success(mock_generative_model):
     """Tests successful content generation."""
@@ -51,7 +62,7 @@ def test_generate_content_success(mock_generative_model):
     mock_response.text = "Generated content"
     mock_generative_model.return_value.generate_content.return_value = mock_response
 
-    llm_interface = LLMInterface()
+    llm_interface = LLMInterface() # Initializes and uses the mocked GenerativeModel
     prompt = "Test prompt"
     result = llm_interface.generate_content(prompt)
 
@@ -60,6 +71,7 @@ def test_generate_content_success(mock_generative_model):
 
 def test_generate_content_failure(mock_generative_model):
     """Tests content generation failure (e.g., API error)."""
+    # Configure the mock model to raise an exception
     mock_generative_model.return_value.generate_content.side_effect = Exception("API error")
 
     llm_interface = LLMInterface()
