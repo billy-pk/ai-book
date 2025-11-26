@@ -8,6 +8,7 @@ on:
 # FIX: Grants the GITHUB_TOKEN write access to the repository contents
 permissions:
   contents: write
+  pages: write 
 
 jobs:
   deploy:
@@ -21,13 +22,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # Fetch full history is often required for the deploy action
+          # Fetch full history is required for the deploy action
           fetch-depth: 0 
 
+      # --- Setup Node.js (Frontend) ---
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Recommended Docusaurus Node.js version
+          node-version: 20
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
@@ -35,15 +37,17 @@ jobs:
         run: npm install
         working-directory: ./frontend
 
-      # Add Python setup and content generation steps
+      # --- Setup Python (Content Generation) ---
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9' # Use a specific Python version that meets requirements (e.g., 3.9+)
+          # Using your preferred Python version 3.12
+          python-version: '3.12' 
 
+      # NOTE: Paths adjusted to run from the root, not deep inside the script directory.
       - name: Install Python dependencies
-        run: pip install -r requirements.txt pytest pytest-cov
-        working-directory: ./frontend/scripts/content-generator
+        run: pip install -r frontend/scripts/content-generator/requirements.txt
+        # No working-directory needed if path is relative from root
 
       - name: Run Python tests with coverage
         run: pytest
@@ -53,18 +57,16 @@ jobs:
         run: python main.py
         working-directory: ./frontend/scripts/content-generator
         env:
-          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }} # Pass the LLM API key securely
+          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }} 
 
+      # --- Build and Deploy ---
       - name: Build Docusaurus website
         run: npm run build
         working-directory: ./frontend
 
       - name: Deploy to GitHub Pages
-        # Use the peaceiris action as specified in your original plan
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Path to the Docusaurus build output inside the 'frontend' subdirectory
           publish_dir: ./frontend/build 
-          # The branch the action will push the static files to
           publish_branch: gh-pages
